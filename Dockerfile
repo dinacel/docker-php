@@ -1,8 +1,7 @@
 FROM php:7-fpm
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
-RUN install-php-extensions apcu bcmath csv gd imagick imap intl mcrypt memcached redis zip
-# pdo_mysql pdo_pgsql 
+RUN install-php-extensions apcu bcmath csv gd imagick imap intl mcrypt memcached pdo_mysql pdo_pgsql redis zip 
 RUN install-php-extensions @composer
 
 RUN pecl install pcov && \
