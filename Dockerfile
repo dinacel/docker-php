@@ -1,4 +1,4 @@
-FROM php:7-fpm
+FROM php:fpm-bullseye
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 RUN install-php-extensions apcu bcmath csv gd imagick imap intl mcrypt memcached pdo_mysql pdo_pgsql redis zip 
